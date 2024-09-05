@@ -51,13 +51,19 @@ if __name__ == '__main__':
 
     # Alumno: Graficar la función utilizando "scatter"
     # utilizando "x" e "y" ya disponible
+    fig = plt.figure()
+    fig.suptitle('Ejercicio 3', fontsize=14)
+    ax2 = fig.add_subplot(1, 2, 2)
 
     # Colocar la leyenda y el label con el nombre de la función
 
     # Elegir un marker a elección
+    ax2.scatter(x, y, c='green', marker="*")
+    ax2.set_xlabel('Tangente hiperbólica')
+    ax2.set_facecolor('whitesmoke')
+    ax2.grid('solid')
 
     # Crear acá su gráfico
+    plt.show()
 
-    scatter_plot()
-
-    print("terminamos")
+    #scatter_plot()
