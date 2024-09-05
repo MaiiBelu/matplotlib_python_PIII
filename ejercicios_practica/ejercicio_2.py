@@ -60,15 +60,29 @@ if __name__ == '__main__':
 
     # Alumno: Realizar un gráfico que representen las dos funciones
     # Para ello se debe llamar dos veces a "plot" con el mismo "ax"
+    fig = plt.figure()
+    ax = fig.add_subplot()
+
 
     # Se debe colocar en la leyenda la función que representa
     # cada función
 
     # Cada función dibujarla con un color distinto
     # a su elección
+    ax.plot(x, y1, color='m', marker="*", label='Función cuadrática = x**2')
+    ax.plot(x, y2, color='c', marker=".", label='Función cúbica = x**3')
 
     # Crear acá su gráfico 
+    ax.set_facecolor('whitesmoke')
+    ax.set_title("Ejercicio 2 - 2 funciones")
+    ax.set_ylabel("Eje Y")
+    ax.set_xlabel("Eje X")
+    ax.set_xlim([-12, 4*np.pi])
+    ax.set_ylim([-4, 4])       
+    ax.legend()
 
-    multi_plot()  
+    plt.show()
+
+    #multi_plot()  
 
     print("terminamos")
