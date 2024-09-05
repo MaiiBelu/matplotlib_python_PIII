@@ -61,6 +61,8 @@ if __name__ == '__main__':
     # intervalor de valores de "X":
     x = np.linspace(0, 10, 40)
 
+    fig = plt.figure()
+    fig.suptitle('Gráfico 4 funciones', fontsize=14)
     # Realizar tres gráficos que representen
     # y1 = x^2 (X al cuadrado)
     # y2 = x^3 (X al cubo)
@@ -79,8 +81,13 @@ if __name__ == '__main__':
     #  graf1 | graf2
     # ------
     #  graf3 | graf4
+    
     # Utilizar add_subplot para lograr este efecto
     # de "2 filas" "2 columna" de gráficos
+    ax1 = fig.add_subplot(2, 2, 1)
+    ax2 = fig.add_subplot(2, 2, 2)
+    ax3 = fig.add_subplot(2, 2, 3)
+    ax4 = fig.add_subplot(2, 2, 4)
 
     # Se debe colocar en la leyenda la función que representa
     # cada gráfico
@@ -90,8 +97,34 @@ if __name__ == '__main__':
 
     # Colocar una grilla a elección
 
-    # Crear acá su gráfico
+    ax1.plot(x, y1, color='red', label='y1 = x**2')
+    ax1.set_facecolor('whitesmoke')
+    ax1.grid(ls='solid', color='gray', alpha=0.5)
+    ax1.set_ylabel("Y[amplitud]")
+    ax1.set_xlabel("X[rads]")
+    ax1.legend()
+    ax2.plot(x, y2, color='darkorange', label='y2 = x**3')
+    ax2.set_facecolor('whitesmoke')
+    ax2.grid(ls='dotted', color='black', linewidth=0.5)
+    ax2.set_ylabel("Y[amplitud]")
+    ax2.set_xlabel("X[rads]")
+    ax2.legend()
+    ax3.plot(x, y3, color='purple', label='y3 = x**4')
+    ax3.set_facecolor('whitesmoke')
+    ax3.grid(ls='dashdot', color='blue', alpha=0.3)
+    ax3.set_ylabel("Y[amplitud]")
+    ax3.set_xlabel("X[rads]")
+    ax3.legend()
+    ax4.plot(x, y4, color='c', label='y4 = sqrt(x)')
+    ax4.set_facecolor('whitesmoke')
+    ax4.grid(ls='-', color='red', linewidth=0.2)
+    ax4.set_ylabel("Y[amplitud]")
+    ax4.set_xlabel("X[rads]")
+    ax4.legend()
 
-    grid()
+    # Crear acá su gráfico
+    plt.show()
+
+    #grid()
 
     print("terminamos")
