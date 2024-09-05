@@ -48,12 +48,21 @@ if __name__ == '__main__':
 
     # Alumno: Crear una "figura" y crear un "ax" con add_subplot
     # Graficar el "line plot" de "y" en función de "x"
+    fig = plt.figure()
+    fig.suptitle('Ejercicio 1 y=x**2', fontsize=14)
+    ax = fig.add_subplot()
 
     # Alumno: Colocar la leyenda y el label con el nombre de la función
     # Darle color a la línea a su elección
+    ax.plot(x, y, c='red', marker='.', label='función cuadrática: y=x**2')
+    ax.legend()
+    ax.grid()
+    ax.set_facecolor('whitesmoke')
 
     # Crear acá su gráfico
+    plt.show()
 
-    line_plot()
+    #line_plot()
 
     print("terminamos")
+
